@@ -22,9 +22,42 @@ class App < Sinatra::Base
   get '/say/:number/:phrase' do
     number = params[:number].to_i
     phrase = params[:phrase].to_s
-    number.times {"#{phrase}"}
+    test = []
+    number.times {test << phrase}
+
+    test.each do |item|
+      "#{item}"
+    end
   end
 
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
+    words = params[:word1] + ' ' + params[:word2] + ' ' + params[:word3] + ' ' + params[:word4] + ' ' + params[:word5] + '.'
+    "#{words}"
+  end
+
+  get '/add/:number1/:number2' do
+    number1 = params[:number1].to_i
+    number2 = params[:number2].to_i
+    "#{number1 + number2}"
+  end
+
+  get '/subtract/:number1/:number2' do
+    number1 = params[:number1].to_i
+    number2 = params[:number2].to_i
+    "#{number2 - number1}"
+  end
+
+  get '/multiply/:number1/:number2' do
+    number1 = params[:number1].to_i
+    number2 = params[:number2].to_i
+    "#{number2 * number1}"
+  end
+
+  get '/divide/:number1/:number2' do
+    number1 = params[:number1].to_i
+    number2 = params[:number2].to_i
+    "#{number1 / number2}"
+  end
 
 
 
